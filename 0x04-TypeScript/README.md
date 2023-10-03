@@ -1,1 +1,1 @@
-# 0x04-TypeScriptt
+# 0x04-TypeScript
