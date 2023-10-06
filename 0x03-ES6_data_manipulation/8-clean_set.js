@@ -1,13 +1,8 @@
-const cleanSet = (set, startString) => {
-  const strings = [];
-
-  if (startString === '' || typeof startString !== 'string') return '';
-  set.forEach((s) => {
-    if (typeof s === 'string' && s.startsWith(startString)) {
-      strings.push(s.slice(startString.length));
-    }
+export default function cleanSet(set, startString) {
+  let result = '';
+  if (!startString || !startString.length) return result;
+  set.forEach((i) => {
+    if (i && i.startsWith(startString)) result += `${i.slice(startString.length)}-`;
   });
-  return strings.join('-');
-};
-
-export default cleanSet;
+  return result.slice(0, result.length - 1);
+}
